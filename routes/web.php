@@ -20,5 +20,7 @@ Route::get('/produk', function () {
 });
 
 Route::get('/tambahProduk', function () {
-    return view('tambahProduk');
+    $jenis = ['Alat Tulis', 'Elektronik', 'Sembako'];
+    $jumlah = count($jenis);
+    return view('tambahProduk', compact('jenis', 'jumlah'));
 });

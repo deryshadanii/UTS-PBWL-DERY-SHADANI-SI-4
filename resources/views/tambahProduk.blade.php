@@ -55,9 +55,15 @@
           <label class="form-label">Jenis Produk</label>
           <select class="form-select">
             <option selected disabled>Pilih Produk</option>
+
+            @for ($i = 0; $i < $jumlah; $i++)
+              <option value="{{ $jenis[$i] }}">{{ $jenis[$i] }}</option>
+            @endfor
+
           </select>
         </div>
       </div>
+
       <div class="row align-items-end mb-3">
         <div class="col-md-6">
           <label class="form-label">Harga</label>
