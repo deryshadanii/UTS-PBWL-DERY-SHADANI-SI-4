@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">UTS Laravel</a>
@@ -34,33 +35,41 @@
       </div>
     </div>
   </nav>
-  <div class="container mt-5 pt-5">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h1 class="mb-0">Halaman Produk</h1>
-      <a href="/tambahProduk" class="btn btn-primary">Tambah Produk</a>
-    </div>
 
-    <table class="table table-primary table-sm table-hover table-striped table-bordered text-center align-middle">
-      <thead class="table-primary">
-        <tr>
-          <th>Kode Produk</th>
-          <th>Nama Produk</th>
-          <th>Jenis Produk</th>
-          <th>Harga</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{-- Menggunakan FOR --}}
-        @for ($i = 0; $i < $jumlah; $i++)
-          <tr>
-            <td>{{ $kode[$i] }}</td>
-            <td>{{ $nama[$i] }}</td>
-            <td>{{ $jenis[$i] }}</td>
-            <td>{{ $harga[$i] }}</td>
-          </tr>
-        @endfor
-      </tbody>
-    </table>
+  <div class="container mt-5 pt-5">
+    <h1 class="mb-4">Form Tambah Produk</h1>
+
+    <form>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Kode Produk</label>
+          <input type="text" class="form-control" placeholder="Input Kode Produk">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Nama Produk</label>
+          <input type="text" class="form-control" placeholder="Input Nama Produk">
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Jenis Produk</label>
+          <select class="form-select">
+            <option selected disabled>Pilih Produk</option>
+          </select>
+        </div>
+      </div>
+      <div class="row align-items-end mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Harga</label>
+          <input type="number" class="form-control" placeholder="Input Harga">
+        </div>
+
+        <div class="col-md-6 d-flex">
+          <button type="submit" class="btn btn-success w-100 mt-2">Simpan</button>
+        </div>
+      </div>
+
+    </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
