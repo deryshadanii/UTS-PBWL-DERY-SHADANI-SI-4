@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">UTS Laravel</a>
@@ -35,9 +34,33 @@
       </div>
     </div>
   </nav>
+  <div class="container mt-5 pt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="mb-0">Halaman Produk</h1>
+      <a href="#" class="btn btn-primary">Tambah Produk</a>
+    </div>
 
-  <div class="container">
-    <h1 class="mt-5">Halaman Home</h1>
+    <table class="table table-primary table-sm table-hover table-striped table-bordered text-center align-middle">
+      <thead class="table-primary">
+        <tr>
+          <th>Kode Produk</th>
+          <th>Nama Produk</th>
+          <th>Jenis Produk</th>
+          <th>Harga</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{-- Menggunakan FOR --}}
+        @for ($i = 0; $i < $jumlah; $i++)
+          <tr>
+            <td>{{ $kode[$i] }}</td>
+            <td>{{ $nama[$i] }}</td>
+            <td>{{ $jenis[$i] }}</td>
+            <td>{{ $harga[$i] }}</td>
+          </tr>
+        @endfor
+      </tbody>
+    </table>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
